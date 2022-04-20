@@ -88,6 +88,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -250,21 +258,23 @@ var render = function () {
             },
           },
         },
-        [_vm._v("Add Task")]
+        [_c("i", { staticClass: "fa fa-plus" }), _vm._v(" Add New Task")]
       ),
       _vm._v(" "),
-      _c("table", { staticClass: "table table-striped" }, [
+      _c("table", { staticClass: "table table-striped table-bordered" }, [
         _vm._m(0),
         _vm._v(" "),
         _c(
           "tbody",
           _vm._l(_vm.tasks, function (data, key) {
             return _c("tr", { key: key }, [
-              _c("td", [_vm._v(_vm._s(key + 1))]),
+              _c("td", { staticClass: "text-center" }, [
+                _vm._v(_vm._s(key + 1)),
+              ]),
               _vm._v(" "),
               _c("td", [_vm._v(_vm._s(data.name))]),
               _vm._v(" "),
-              _c("td", [
+              _c("td", { staticClass: "text-center" }, [
                 _c(
                   "button",
                   {
@@ -275,7 +285,7 @@ var render = function () {
                       },
                     },
                   },
-                  [_vm._v("view")]
+                  [_c("i", { staticClass: "fa fa-eye" })]
                 ),
                 _vm._v(" "),
                 _c(
@@ -288,7 +298,7 @@ var render = function () {
                       },
                     },
                   },
-                  [_vm._v("update")]
+                  [_c("i", { staticClass: "fa fa-pencil" })]
                 ),
                 _vm._v(" "),
                 _c(
@@ -301,7 +311,7 @@ var render = function () {
                       },
                     },
                   },
-                  [_vm._v("delete")]
+                  [_c("i", { staticClass: "fa fa-trash" })]
                 ),
               ]),
             ])
@@ -321,13 +331,17 @@ var render = function () {
           },
         },
         [
-          _c("div", { staticClass: "text-center mt-3" }, [
+          _c("div", { staticClass: "mt-3" }, [
+            _c("hr"),
+            _vm._v(" "),
             _c("p", [
               _c("span", { staticClass: "font-weight-bold" }, [
                 _vm._v("Task name: "),
               ]),
               _vm._v(_vm._s(this.singleTaskData.name)),
             ]),
+            _vm._v(" "),
+            _c("hr"),
             _vm._v(" "),
             _c(
               "button",
@@ -387,7 +401,9 @@ var render = function () {
               }),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "text-center" }, [
+            _c("hr"),
+            _vm._v(" "),
+            _c("div", [
               _c(
                 "button",
                 {
@@ -398,7 +414,7 @@ var render = function () {
                     },
                   },
                 },
-                [_vm._v(" Close")]
+                [_c("i", { staticClass: "fa fa-times" }), _vm._v(" Close")]
               ),
               _vm._v(" "),
               _c(
@@ -411,7 +427,7 @@ var render = function () {
                     },
                   },
                 },
-                [_vm._v(" Add")]
+                [_c("i", { staticClass: "fa fa-plus" }), _vm._v(" Add")]
               ),
             ]),
           ]),
@@ -456,7 +472,9 @@ var render = function () {
               }),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "text-center" }, [
+            _c("hr"),
+            _vm._v(" "),
+            _c("div", [
               _c(
                 "button",
                 {
@@ -467,7 +485,7 @@ var render = function () {
                     },
                   },
                 },
-                [_vm._v("Close")]
+                [_c("i", { staticClass: "fa fa-times" }), _vm._v(" Close")]
               ),
               _vm._v(" "),
               _c(
@@ -480,7 +498,7 @@ var render = function () {
                     },
                   },
                 },
-                [_vm._v(" Update")]
+                [_c("i", { staticClass: "fa fa-book" }), _vm._v("  Update")]
               ),
             ]),
           ]),
@@ -499,6 +517,8 @@ var render = function () {
         },
         [
           _c("div", { staticClass: "text-center mt-3" }, [
+            _c("hr"),
+            _vm._v(" "),
             _c("p", [
               _vm._v("Are you sure to delete task # "),
               _c("span", { staticClass: "font-weight-bold" }, [
@@ -506,31 +526,35 @@ var render = function () {
               ]),
             ]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-sm btn-secondary",
-                on: {
-                  click: function ($event) {
-                    return _vm.closeModal("deleteTaskModal")
-                  },
-                },
-              },
-              [_vm._v("Close")]
-            ),
+            _c("hr"),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-sm btn-success",
-                on: {
-                  click: function ($event) {
-                    return _vm.deleteTaskData()
+            _c("div", [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-sm btn-secondary",
+                  on: {
+                    click: function ($event) {
+                      return _vm.closeModal("deleteTaskModal")
+                    },
                   },
                 },
-              },
-              [_vm._v(" Delete")]
-            ),
+                [_c("i", { staticClass: "fa fa-times" }), _vm._v(" Close")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-sm btn-danger",
+                  on: {
+                    click: function ($event) {
+                      return _vm.deleteTaskData()
+                    },
+                  },
+                },
+                [_c("i", { staticClass: "fa fa-trash" }), _vm._v(" Delete")]
+              ),
+            ]),
           ]),
         ]
       ),
@@ -544,11 +568,15 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("thead", [
-      _c("th", { staticStyle: { width: "10%" } }, [_vm._v("SL")]),
+      _c("th", { staticStyle: { width: "10%", "text-align": "center" } }, [
+        _vm._v("SL"),
+      ]),
       _vm._v(" "),
       _c("th", { staticStyle: { width: "60%" } }, [_vm._v("Task Name")]),
       _vm._v(" "),
-      _c("th", { staticStyle: { width: "30%" } }, [_vm._v("Action")]),
+      _c("th", { staticStyle: { width: "30%", "text-align": "center" } }, [
+        _vm._v("Action"),
+      ]),
     ])
   },
 ]
